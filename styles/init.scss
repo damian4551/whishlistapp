@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+
+//variables
+$font: "Montserrat";
+$mainColor: #E042E6;
+$black: #000000;
+$white: #ffffff;
+ 
+
+//init settings
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+//mixins
+@mixin shadow {
+    -webkit-box-shadow: 0px 0px 15px -2px rgba(224,66,230,0.3);
+    -moz-box-shadow: 0px 0px 15px -2px rgba(224,66,230,0.3);
+    box-shadow: 0px 0px 15px -2px rgba(224,66,230,0.3); 
+}
+
+@mixin shadowBlack {
+    -webkit-box-shadow: 0px 0px 15px -2px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 0px 15px -2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 15px -2px rgba(0, 0, 0, 0.3);
+}

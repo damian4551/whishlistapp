@@ -1,0 +1,709 @@
+@import "init.scss";
+
+.error-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    border-radius: 20px;
+    padding: 40px;
+    background-color: $white;
+    z-index: 999;
+    @include shadowBlack;
+    @media (min-width: 768px) {
+        width: 40%;
+    }
+    @media (min-width: 1280px) {
+        width: 30%;
+    }
+    @media (min-width: 1680px) {
+        width: 25%;
+    }
+    .close-btn {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 15px;
+        font-family: $font;
+        font-size: 1em;
+        font-weight: 700;
+        color: $black;
+        background-color: $white;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        transform: rotate(45deg);
+        @media (min-width: 1280px) {
+            font-size: 1.2em;
+        }
+        @media (min-width: 1680px) {
+            font-size: 1.3em;
+        }
+    }
+    p {
+        width: 100%;
+        text-align: center;
+        font-family: $font;
+        font-weight: 400;
+        font-size: 0.9em;
+        list-style-type: none;
+        @media (min-width: 1280px) {
+            font-size: 1em;
+        }
+        @media (min-width: 1680px) {
+            font-size: 1.1em;
+        }
+    }
+}
+
+.info {
+    font-family: $font;
+    font-weight: 700;
+    font-size: 1em;
+    color: $mainColor;
+    @media (min-width: 1280px) {
+        font-size: 1.2em;
+    }
+    @media (min-width: 1680px) {
+        font-size: 1.4em;
+    }
+}
+
+
+.wrapper {
+    min-height: 100vh;
+    width: 100vw;
+    .inner-wrapper {
+        position: relative;
+        min-height: 100vh;
+        width: 100%;
+        padding: 0 30px;
+        display: flex;
+        flex-direction: column;
+        @media (min-width: 1280px) {
+            padding: 20px 100px;
+            height: 100vh;
+        }
+        .header {
+            order: 0;
+            width: 100%;
+            padding: 20px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            @media (min-width: 1280px) {
+                margin-bottom: 40px;
+            }
+            .logo {
+                font-family: $font;
+                font-weight: 700;
+                font-size: 1em;
+                @media (min-width: 1280px) {
+                    font-size: 1.2em;
+                }
+                @media (min-width: 1680px) {
+                    font-size: 1.4em;
+                }
+                a {
+                    text-decoration: none;
+                    color: $black;
+                    span {
+                        color: $mainColor;
+                    }
+                }
+            }
+            ul {
+                font-family: $font;
+                font-weight: 400;
+                font-size: 0.9em;
+                list-style-type: none;
+                @media (min-width: 1280px) {
+                    font-size: 1em;
+                }
+                @media (min-width: 1680px) {
+                    font-size: 1.1em;
+                }
+                li {
+                    a {
+                        color: $black;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+        .main-container {
+            order: 2;
+            width: 100%;
+            @media (min-width: 1280px) {
+                margin-bottom: auto;
+            }
+            .catalogs-container {
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 30px;
+                .title-block {
+                    font-family: $font;
+                    font-weight: 300;
+                    font-size: 0.9em;
+                    padding-bottom: 5px;
+                    border-bottom: 1px solid $mainColor;
+                    @media (min-width: 1280px) {
+                        font-size: 1em;
+                        padding-bottom: 7px;
+                        border-bottom: 2px solid $mainColor;
+                    }
+                    @media (min-width: 1680px) {
+                        font-size: 1.1em;
+                    }
+                }
+                .catalogs-list {
+                    width: 100%;
+                    padding: 20px 0;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    overflow: scroll;
+                    max-height: 50vh;
+                    @media (min-width: 768px) {
+                        justify-content: flex-start;
+                    }
+                    @media (min-width: 1280px) {
+                        max-height: 30vh;
+                    }
+                    .catalog {
+                        position: relative;
+                        width: calc(50% - 10px);
+                        height: 100px;
+                        border-radius: 20px;
+                        margin: 5px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        transition: transform 0.3s ease-in-out;
+                        @include shadow;
+                        @media (min-width: 768px) {
+                            width: calc(20% - 10px);
+                        }
+                        @media (min-width: 1280px) {
+                            width: calc(20% - 40px);
+                            margin: 20px;
+                        }
+                        &:hover {
+                            transform: scale(1.05);
+                        }
+                        form {
+                            .delete-catalog {
+                                position: absolute;
+                                top: 0;
+                                right: 0;
+                                margin: 15px;
+                                padding: 5px;
+                                font-family: $font;
+                                font-size: 1em;
+                                font-weight: 700;
+                                color: $black;
+                                background-color: $white;
+                                border: none;
+                                outline: none;
+                                cursor: pointer;
+                                transform: rotate(45deg);
+                                z-index: 10;
+                                @media (min-width: 1280px) {
+                                    font-size: 1.2em;
+                                }
+                                @media (min-width: 1680px) {
+                                    font-size: 1.3em;
+                                }
+                            }
+                        }
+                        .catalog-link {
+                            display: block;
+                            position: relative;
+                            height: 100%;
+                            width: 100%;
+                            font-family: $font;
+                            font-weight: 300;
+                            font-size: 0.9em;
+                            list-style-type: none;
+                            color: $black;
+                            text-decoration: none;
+                            @media (min-width: 1280px) {
+                                font-size: 1em;
+                            }
+                            @media (min-width: 1680px) {
+                                font-size: 1.1em;
+                            }
+                            span {
+                                position: absolute;
+                                top: 50%;
+                                left: 50%;
+                                transform: translate(-50%, -50%);
+                                text-align: center;
+                            }
+                        }
+                    }
+                }
+            }
+            .products-container {
+                .title-block {
+                    font-family: $font;
+                    font-weight: 300;
+                    font-size: 0.9em;
+                    padding-bottom: 5px;
+                    border-bottom: 1px solid $mainColor;
+                    @media (min-width: 1280px) {
+                        font-size: 1em;
+                        padding-bottom: 7px;
+                        border-bottom: 2px solid $mainColor;
+                    }
+                    @media (min-width: 1680px) {
+                        font-size: 1.1em;
+                    }
+                }
+                .products-list {
+                    width: 100%;
+                    padding: 20px 0;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    overflow: scroll;
+                    max-height: 50vh;
+                    @media (min-width: 768px) {
+                        justify-content: flex-start;
+                    }
+                    @media (min-width: 1280px) {
+                        max-height: 30vh;
+                    }
+                    .product {
+                        width: calc(50% - 10px);
+                        height: 100px;
+                        border-radius: 20px;
+                        margin: 5px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        cursor: pointer;
+                        @include shadow;
+                        transition: transform 0.3s ease-in-out;
+                        @media (min-width: 768px) {
+                            width: calc(20% - 10px);
+                        }
+                        @media (min-width: 1280px) {
+                            width: calc(20% - 40px);
+                            margin: 20px;
+                        }
+                        &:hover {
+                            transform: scale(1.05);
+                        }
+                        span {
+                            font-family: $font;
+                            font-weight: 300;
+                            font-size: 0.9em;
+                            color: $black;
+                            @media (min-width: 1280px) {
+                                font-size: 1em;
+                            }
+                            @media (min-width: 1680px) {
+                                font-size: 1.1em;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .bar {
+            order: 1;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin: 30px 0;
+            @media (min-width: 1280px) {
+                order: 3;
+                align-items: flex-end;
+            }
+            .catalog-info {
+                font-family: $font;
+                font-weight: 300;
+                font-size: 0.9em;
+                color: $black;
+                @media (min-width: 1280px) {
+                    font-size: 1em;
+                }
+                @media (min-width: 1680px) {
+                    font-size: 1.1em;
+                }
+            }
+            .options-block {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-end;
+                @media (min-width: 1280px) {
+                    flex-direction: row;
+                    align-items: center;
+                }
+                .options {
+                    display: none;
+                    flex-direction: column;
+                    align-items: flex-end;
+                    margin-top: 10px;
+                    @media (min-width: 1280px) {
+                        order: -1;
+                        margin-top: 0;
+                        flex-direction: row;
+                    }
+                    span {
+                        font-family: $font;
+                        font-weight: 300;
+                        font-size: 0.9em;
+                        list-style-type: none;
+                        color: $mainColor;
+                        margin-bottom: 5px;
+                        cursor: pointer;
+                        &:last-of-type {
+                            margin-bottom: 0;
+                        }
+                        @media (min-width: 1280px) {
+                            font-size: 1em;
+                            margin: 0;
+                            margin-right: 10px;
+                        }
+                        @media (min-width: 1680px) {
+                            font-size: 1.1em;
+                        }
+                    }
+                }
+                .show-options-btn {
+                    width: 30px;
+                    height: 30px;
+                    border: 1px solid $mainColor;
+                    border-radius: 100%;
+                    background-color: $white;
+                    color: $mainColor;
+                    outline: none;
+                    cursor: pointer;
+                    @media (min-width: 1280px) {
+                        width: 45px;
+                        height: 45px;
+                        font-size: 1.2em;
+                        border: 2px solid $mainColor;
+                    }
+                    @media (min-width: 1680px) {
+                        width: 55px;
+                        height: 55px;
+                        font-size: 1.4em;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//catalog form styling
+.catalog-form, .product-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 290px;
+    border-radius: 20px;
+    padding: 40px;
+    background-color: $white;
+    display: none;
+    z-index: 999;
+    @include shadowBlack;
+    @media (min-width: 1280px) {
+        width: 350px;
+    }
+    @media (min-width: 1680px) {
+        width: 400px;
+    }
+    .close-btn {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 15px;
+        font-family: $font;
+        font-size: 1em;
+        font-weight: 700;
+        color: $black;
+        background-color: $white;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        transform: rotate(45deg);
+        @media (min-width: 1280px) {
+            font-size: 1.2em;
+        }
+        @media (min-width: 1680px) {
+            font-size: 1.3em;
+        }
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        .input-row {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 35px;
+            label {
+                font-family: $font;
+                font-size: 0.9em;
+                font-weight: 300;
+                color: $black;
+                @media (min-width: 1280px) {
+                    font-size: 1em;
+                }
+                @media (min-width: 1680px) {
+                    font-size: 1.1em;
+                }
+            }
+            input {
+                border: none;
+                border-bottom: 1px solid $black;
+                padding-top: 10px;
+                padding-bottom: 5px;
+                outline: none;
+                font-family: $font;
+                font-size: 0.9em;
+                font-weight: 300;
+                color: $black;
+                @media (min-width: 1280px) {
+                    font-size: 1em;
+                }
+                @media (min-width: 1680px) {
+                    font-size: 1.1em;
+                }
+            }
+            select {
+                border: none;
+                border-bottom: 1px solid $black;
+                padding-top: 10px;
+                padding-bottom: 5px;
+                outline: none;
+                font-family: $font;
+                font-size: 0.9em;
+                font-weight: 300;
+                color: $black;
+                background-color: transparent;
+                @media (min-width: 1280px) {
+                    font-size: 1em;
+                }
+                @media (min-width: 1680px) {
+                    font-size: 1.1em;
+                }
+            }
+        }
+        .btn-add-catalog, .btn-add-product {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+            button {
+                height: 25px;
+                width: auto;
+                background-color: transparent;
+                border: none;
+                outline: none;
+                cursor: pointer;
+                font-size: 1em;
+                @media (min-width: 1280px) {
+                    font-size: 1.2em;
+                }
+            }
+        }
+    }
+}
+
+//modal styling
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    border-radius: 20px;
+    padding: 40px;
+    background-color: $white;
+    display: none;
+    z-index: 999;
+    @include shadowBlack;
+    @media (min-width: 768px) {
+        width: 50%;
+    }
+    @media (min-width: 1280px) {
+        width: 40%;
+    }
+    @media (min-width: 1680px) {
+        width: 700px;
+    }
+    .close-btn {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 15px;
+        font-family: $font;
+        font-size: 1em;
+        font-weight: 700;
+        color: $black;
+        background-color: $white;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        transform: rotate(45deg);
+        @media (min-width: 1280px) {
+            font-size: 1.2em;
+        }
+        @media (min-width: 1680px) {
+            font-size: 1.3em;
+        }
+    }
+    .modal-title {
+        font-family: $font;
+        font-size: 1.5em;
+        font-weight: 400;
+        color: $black;
+    }
+    .modal-description-block {
+        margin-top: 30px;
+        .modal-description-title {
+            font-family: $font;
+            font-size: 0.9em;
+            font-weight: 300;
+            color: $mainColor;
+            margin-bottom: 10px;
+            @media (min-width: 1280px) {
+                font-size: 1em;
+            }
+            @media (min-width: 1680px) {
+                font-size: 1.1em;
+            }
+        }
+        p {
+            font-family: $font;
+            font-size: 0.9em;
+            font-weight: 300;
+            color: $black;
+            @media (min-width: 1280px) {
+                font-size: 1em;
+            }
+            @media (min-width: 1680px) {
+                font-size: 1.1em;
+            }
+        }
+    }
+    .links {
+        margin-top: 30px;
+        .link-title {
+            font-family: $font;
+            font-size: 0.9em;
+            font-weight: 300;
+            color: $mainColor;
+            margin-bottom: 10px;
+            @media (min-width: 1280px) {
+                font-size: 1em;
+            }
+            @media (min-width: 1680px) {
+                font-size: 1.1em;
+            }
+        }
+        ul {
+            list-style-type: none;
+            .link {
+                font-family: $font;
+                font-size: 0.9em;
+                font-weight: 300;
+                color: $mainColor;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                @media (min-width: 1280px) {
+                    font-size: 1em;
+                }
+                @media (min-width: 1680px) {
+                    font-size: 1.1em;
+                }
+                a {
+                    text-decoration: none;
+                    color: $black;
+                }
+                form {
+                    .delete-link {
+                        font-family: $font;
+                        font-size: 0.9em;
+                        font-weight: 300;
+                        color: $mainColor;
+                        background-color: $white;
+                        border: none;
+                        outline: none;
+                        cursor: pointer;
+                        z-index: 10;
+                        @media (min-width: 1280px) {
+                            font-size: 1em;
+                        }
+                        @media (min-width: 1680px) {
+                            font-size: 1.1em;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .link-form {
+        margin-top: 30px;
+        input {
+            border: none;
+            outline: none;
+            border-bottom: 1px solid $black;
+            font-family: $font;
+            font-size: 0.7em;
+            font-weight: 300;
+            color: $black;
+            padding: 5px;
+            @media (min-width: 1280px) {
+                font-size: 0.8em;
+            }
+            @media (min-width: 1680px) {
+                font-size: 1em;
+            }
+        }
+        button {
+            font-family: $font;
+            font-size: 1em;
+            font-weight: 700;
+            color: $black;
+            background-color: $white;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            @media (min-width: 1280px) {
+                font-size: 1.2em;
+            }
+            @media (min-width: 1680px) {
+                font-size: 1.3em;
+            }
+        }
+    }
+    .delete-product-form {
+        margin-top: 20px;
+        .delete-product {
+            font-family: $font;
+            font-size: 0.9em;
+            font-weight: 300;
+            color: $mainColor;
+            background-color: $white;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            z-index: 10;
+            @media (min-width: 1280px) {
+                font-size: 1em;
+            }
+            @media (min-width: 1680px) {
+                font-size: 1.1em;
+            }
+        }
+    }
+}
