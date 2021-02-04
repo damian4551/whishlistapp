@@ -74,18 +74,8 @@ class UserManager {
 
     }
 
-    public function loginUser($db) {
+    public function loginUser($db, $username, $password) {
         $user_id = -1;
-
-        $args = [
-            'username' => FILTER_SANITIZE_MAGIC_QUOTES,
-            'password' => FILTER_SANITIZE_MAGIC_QUOTES
-            ];
-
-        $data = filter_input_array(INPUT_POST, $args);
-
-        $username = $data['username'];
-        $password = $data['password'];
         
         $user_id = $db->selectUser($username, $password, "users");
         
