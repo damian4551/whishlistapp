@@ -37,7 +37,7 @@
 <body>
     <div class="wrapper">
         <div class="logo-block">
-            <h1 class="logo">whishlist<span>app</span></h1>
+            <h1 class="logo">wishlist<span>app</span></h1>
         </div>
         <div class="error-block">
             <p>
