@@ -39,7 +39,9 @@ function showProductForm() {
 function hideForms() {
     productForm.style.display = 'none';
     catalogForm.style.display = 'none';
-    errorBox.style.display = 'none';
+    if(errorBox) {
+        errorBox.style.display = 'none';
+    }
     modals.forEach(modal => {
         modal.style.display = "none";
     });

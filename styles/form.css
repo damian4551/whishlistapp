@@ -32,8 +32,14 @@
 
 .wrapper .logo-block .logo {
   font-family: "Montserrat";
-  font-size: 4em;
+  font-size: 2em;
   text-align: center;
+}
+
+@media (min-width: 500px) {
+  .wrapper .logo-block .logo {
+    font-size: 3.5em;
+  }
 }
 
 @media (min-width: 768px) {
